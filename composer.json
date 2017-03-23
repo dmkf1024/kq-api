@@ -1,5 +1,11 @@
 {
     "require": {
         "propel/propel": "~2.0@dev"
-    }
+    },
+    "repositories": {
+	    "packagist": {
+	        "type": "composer",
+	        "url": "https://packagist.phpcomposer.com"
+	    }
+	}
 }

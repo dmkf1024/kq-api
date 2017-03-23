@@ -20,7 +20,7 @@
         "suggest": {
             "ext-mbstring": "For best performance"
         },
-        "time": "2016-11-14 01:06:16",
+        "time": "2016-11-14T01:06:16+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -93,7 +93,7 @@
             "symfony/config": "",
             "symfony/yaml": ""
         },
-        "time": "2017-03-04 12:23:14",
+        "time": "2017-03-04T12:23:14+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -172,7 +172,7 @@
             "symfony/property-access": "For using the Expression validator",
             "symfony/yaml": ""
         },
-        "time": "2017-02-28 02:30:50",
+        "time": "2017-02-28T02:30:50+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -223,7 +223,7 @@
         "require": {
             "php": ">=5.5.9"
         },
-        "time": "2017-03-06 19:30:27",
+        "time": "2017-03-06T19:30:27+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -281,7 +281,7 @@
         "suggest": {
             "symfony/yaml": "To use the yaml reference dumper"
         },
-        "time": "2017-03-01 18:18:25",
+        "time": "2017-03-01T18:18:25+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -332,7 +332,7 @@
         "require": {
             "php": ">=5.5.9"
         },
-        "time": "2017-02-21 09:12:04",
+        "time": "2017-02-21T09:12:04+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -383,7 +383,7 @@
         "require": {
             "php": ">=5.3.0"
         },
-        "time": "2016-10-10 12:19:37",
+        "time": "2016-10-10T12:19:37+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -440,7 +440,7 @@
             "symfony/class-loader": "~2.8|~3.0",
             "symfony/http-kernel": "~2.8|~3.0"
         },
-        "time": "2017-02-18 17:28:00",
+        "time": "2017-02-18T17:28:00+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -505,7 +505,7 @@
             "symfony/filesystem": "",
             "symfony/process": ""
         },
-        "time": "2017-03-06 19:30:27",
+        "time": "2017-03-06T19:30:27+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -562,7 +562,7 @@
         "suggest": {
             "symfony/console": "For validating YAML files using the lint command"
         },
-        "time": "2017-03-07 16:47:02",
+        "time": "2017-03-07T16:47:02+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -628,7 +628,7 @@
         "suggest": {
             "monolog/monolog": "The recommended logging library to use with Propel."
         },
-        "time": "2017-02-22 14:10:34",
+        "time": "2017-02-22T14:10:34+00:00",
         "bin": [
             "bin/propel"
         ],
