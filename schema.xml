@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<database name="default" defaultIdMethod="native" namespace="kq" defaultPhpNamingMethod="underscore">
+  <table name="arrival" idMethod="native" phpName="Arrival" namespace="kq">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="course_id" phpName="CourseId" type="VARCHAR" size="12" required="true"/>
+    <column name="student_id" phpName="StudentId" type="VARCHAR" size="14" required="true"/>
+    <column name="arrival_date" phpName="ArrivalDate" type="DATE" required="true"/>
+    <column name="arrival_time" phpName="ArrivalTime" type="TIME" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="course" idMethod="native" phpName="Course" namespace="kq">
+    <column name="id" phpName="Id" type="VARCHAR" size="12" primaryKey="true" required="true"/>
+    <column name="name" phpName="Name" type="VARCHAR" size="24" required="true"/>
+    <column name="start_week" phpName="StartWeek" type="INTEGER" required="true"/>
+    <column name="end_week" phpName="EndWeek" type="INTEGER" required="true"/>
+    <column name="day_in_week" phpName="DayInWeek" type="INTEGER" required="true"/>
+    <column name="start_class" phpName="StartClass" type="INTEGER" required="true"/>
+    <column name="end_class" phpName="EndClass" type="INTEGER" required="true"/>
+    <column name="teacher_id" phpName="TeacherId" type="VARCHAR" size="12" required="true"/>
+    <column name="classroom" phpName="Classroom" type="VARCHAR" size="10" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="course_student" idMethod="native" phpName="CourseStudent" namespace="kq">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="course_id" phpName="CourseId" type="VARCHAR" size="12" required="true"/>
+    <column name="card_number" phpName="CardNumber" type="VARCHAR" size="24" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="day_off" idMethod="native" phpName="DayOff" namespace="kq">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="course_id" phpName="CourseId" type="VARCHAR" size="12" required="true"/>
+    <column name="student_number" phpName="StudentNumber" type="VARCHAR" size="20" required="true"/>
+    <column name="off_date" phpName="OffDate" type="DATE" required="true"/>
+    <column name="off_time" phpName="OffTime" type="TIME" required="true"/>
+    <column name="cause" phpName="Cause" type="VARCHAR" size="50"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="department" idMethod="native" phpName="Department" namespace="kq">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="name" phpName="Name" type="VARCHAR" size="12" required="true"/>
+    <column name="pid" phpName="Pid" type="INTEGER" defaultValue="0"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="student" idMethod="native" phpName="Student" namespace="kq">
+    <column name="id" phpName="Id" type="VARCHAR" size="14" primaryKey="true" required="true"/>
+    <column name="name" phpName="Name" type="VARCHAR" size="12" required="true"/>
+    <column name="gender" phpName="Gender" type="INTEGER" required="true" defaultValue="0"/>
+    <column name="department_id" phpName="DepartmentId" type="INTEGER" required="true"/>
+    <column name="class_number" phpName="ClassNumber" type="INTEGER" required="true"/>
+    <column name="card_number" phpName="CardNumber" type="VARCHAR" size="24" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="teacher" idMethod="native" phpName="Teacher" namespace="kq">
+    <column name="id" phpName="Id" type="VARCHAR" size="12" primaryKey="true" required="true"/>
+    <column name="name" phpName="Name" type="VARCHAR" size="12" required="true"/>
+    <column name="pwd" phpName="Pwd" type="VARCHAR" size="24" required="true"/>
+    <column name="phone" phpName="Phone" type="VARCHAR" size="11"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+</database>

@@ -1,0 +1,8 @@
+{
+    "propel": {
+        "paths": {
+            "schemaDir": "\/Volumes\/inerdstack\/J_documents\/project\/kaoqin\/kq-api\/kq-api\/kq-api",
+            "phpDir": "\/Volumes\/inerdstack\/J_documents\/project\/kaoqin\/kq-api\/kq-api\/kq-api"
+        }
+    }
+}
