@@ -10,7 +10,7 @@ class Response {
 	* @param string $type 数据类型
 	* return string
 	*/
-    public static function show($code, $message = '', $data = array(), $type = self::JSON) {
+    public static function show($code, $message = '', $data = null, $type = self::JSON) {
         if (!is_numeric($code)) {
             return '';
         }
@@ -20,15 +20,15 @@ class Response {
         $result = array(
             'code' => $code,
             'message' => $message,
-            'data' => $data
+            'result' => $data
         );
 
         if ($type == 'json') {
             self::json($code, $message, $data);
             exit;
-        } elseif ($type == 'xml') {
-            self::xmlEncode($code, $message, $data);
-            exit;
+        // } elseif ($type == 'xml') {
+        //     self::xmlEncode($code, $message, $data);
+        //     exit;
         // } elseif ($type == 'array') {
         } else {
             var_dump($result);
@@ -42,7 +42,7 @@ class Response {
 	* @param array $data 数据
 	* return string
 	*/
-    public static function json($code, $message = '', $data = array()) {
+    public static function json($code, $message = '', $data = null) {
 
         if (!is_numeric($code)) {
             return '';
@@ -51,7 +51,7 @@ class Response {
         $result = array(
             'code' => $code,
             'message' => $message,
-            'data' => $data
+            'result' => $data
         );
 
         echo json_encode($result);

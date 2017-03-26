@@ -53,7 +53,7 @@ class Util {
         if ($data == $token) {
             // 如果token有效
             if ($file->removeCache($fileName)) {
-                Response::show(601, Constant::CODE_601);
+                Response::show(Constant::CODE_SUCCESS, Constant::HINT_LOGOUT_SUCCESS);
             } else { // 如果token已过时
                 Response::show(Constant::CODE_LONG_TIME_NO_LOGIN, Constant::HINT_LONG_TIME_NO_LOGIN);
             }

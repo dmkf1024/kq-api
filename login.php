@@ -6,17 +6,12 @@ require_once('./DB.php');
 require_once('./util.php');
 require_once('./constant.php');
 
-// require 'vendor/autoload.php';
-use kq\kq\TeacherQuery;
-
-$output = array();
-
-$phone = $_GET['phone'];
+$account = $_GET['account'];
 $password = $_GET['pwd'];
 
 // 如果手机号或密码未输入
-if (!isset($phone) || !isset($password)) {
-    Response::show(Constant::CODE_INVALID_PARAM, Constant::HINT_INVALID_PARAM);
+if (!isset($account) || !isset($password)) {
+    return Response::show(Constant::CODE_INVALID_PARAM, Constant::HINT_INVALID_PARAM);
 }
 
 // 连接数据库
@@ -27,14 +22,17 @@ try {
 }
 
 // 查询是否有该用户
-$sql = "select id from teacher where phone = " . $phone;
+$sql = "select id from teacher where phone = " . $account . " or id = " .$account;
 $result = mysql_query($sql, $conn);
-if ($result == false) {
+$teacher = mysql_fetch_object($result);
+if ($teacher == null) {
     return Response::show(Constant::CODE_NO_USER, Constant::HINT_NO_USER);
 }
 
+
+$id = $teacher->id;
 // 验证用户名密码是否在正确
-$sql = "select id from teacher where phone = " . $phone . " and pwd = " . $password;
+$sql = "select id from teacher where id = " . $id . " and pwd = " . $password;
 $result = mysql_query($sql, $conn);
 $teacher = mysql_fetch_object($result);
 if ($teacher == null) { // 用户名或密码错误
@@ -42,7 +40,7 @@ if ($teacher == null) { // 用户名或密码错误
 } else {
     // 生成token
     $token = Util::genToken();
-    $output['id'] = $teacher->id;
+    $output['id'] = $id;
     $output['token'] = $token;
 
     // 缓存文件，建立长连接
