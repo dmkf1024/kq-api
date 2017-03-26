@@ -6,7 +6,8 @@ class DB {
     private $_dbConfig = array (
         'host' => '127.0.0.1',
         'user' => 'admin',
-        'password' => 'admin123'
+        'password' => 'admin123',
+        'database' => 'kaoqin'
     );
 
     private function __construct() {
